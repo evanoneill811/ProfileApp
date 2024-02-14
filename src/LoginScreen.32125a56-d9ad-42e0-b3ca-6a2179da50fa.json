@@ -1,4 +1,5 @@
 {
+    "id": "32125a56-d9ad-42e0-b3ca-6a2179da50fa",
     "type": "Screen",
     "translatedName": "Screen",
     "reactType": "ViewWithProps",
@@ -882,7 +883,6 @@
             "name": "Label_EA"
         }
     ],
-    "id": "32125a56-d9ad-42e0-b3ca-6a2179da50fa",
     "thunkableVersion": 443,
     "name": "LoginScreen"
 }

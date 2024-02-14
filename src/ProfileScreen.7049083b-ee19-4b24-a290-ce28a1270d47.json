@@ -1,4 +1,5 @@
 {
+    "id": "7049083b-ee19-4b24-a290-ce28a1270d47",
     "type": "Screen",
     "translatedName": "Screen",
     "reactType": "ViewWithProps",
@@ -1920,7 +1921,6 @@
             "name": "Title1"
         }
     ],
-    "id": "7049083b-ee19-4b24-a290-ce28a1270d47",
     "thunkableVersion": 445,
     "name": "ProfileScreen"
 }

@@ -1,4 +1,5 @@
 {
+    "id": "cde715ba-fb27-44e1-aa24-5d1771b4ecde",
     "type": "Screen",
     "translatedName": "Screen",
     "reactType": "ViewWithProps",
@@ -347,7 +348,6 @@
             "name": "Title"
         }
     ],
-    "id": "cde715ba-fb27-44e1-aa24-5d1771b4ecde",
     "thunkableVersion": 445,
     "name": "LogoutScreen"
 }
