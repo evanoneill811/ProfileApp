@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "CEFrunfRsOcugIpCl6yh8VIUOrp2": {
+            "type": "object",
+            "properties": {
+                "birthday": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                }
+            },
+            "required": ["birthday", "image", "location", "name", "status"]
+        },
+        "UxqGIGHStleWIG3YB2cASnFCbb73": {
+            "type": "object",
+            "properties": {
+                "birthday": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                }
+            },
+            "required": ["birthday", "image", "location", "name", "status"]
+        }
+    },
+    "required": ["CEFrunfRsOcugIpCl6yh8VIUOrp2", "UxqGIGHStleWIG3YB2cASnFCbb73"]
+}
