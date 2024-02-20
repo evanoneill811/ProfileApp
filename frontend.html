@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EvanGram</title>
+    <style>
+        /* CSS styles for the banner */
+        .banner {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+            width: 100%; /* Adjust the width as needed */
+            height: 150px; /* Adjust the height as needed */
+        }
+        
+        /* CSS styles for the profiles */
+        .profile {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Banner with logo -->
+    <div class="banner">
+        <h1>EvanGram</h1>
+        <img src="eg-high-resolution-logo-black-transparent.png" style="width: 50px; height: 50px;">
+    </div>
+    <style>
+        /* CSS styles for the banner */
+        .banner {
+            background-color: #f89880;
+            padding: 10px;
+            text-align: center;
+            width: 100%; /* Adjust the width as needed */
+            height: 150px; /* Adjust the height as needed */
+        }
+    </style>
+    
+    <!-- Displayed profiles of two users -->
+    <div class="profile">
+        <h2>User 1</h2>
+        <div id="user1-profile">
+            <h3 id="user1-name"></h3>
+            <p id="user1-birthday"></p>
+            <p id="user1-location"></p>
+            <p id="user1-status"></p>
+        </div>
+    </div>
+
+    <div class="profile">
+        <h2>User 2</h2>
+        <div id="user2-profile">
+            <h3 id="user2-name"></h3>
+            <p id="user2-birthday"></p>
+            <p id="user2-location"></p>
+            <p id="user2-status"></p>
+        </div>
+    </div>
+
+    <div class="profile">
+        <h2>User 3</h2>
+        <div id="user3-profile">
+            <h3 id="user3-name"></h3>
+            <p id="user3-birthday"></p>
+            <p id="user3-location"></p>
+            <p id="user3-status"></p>
+        </div>
+    </div>
+
+    <div class="profile">
+        <h2>User 4</h2>
+        <div id="user4-profile">
+            <h3 id="user4-name"></h3>
+            <p id="user4-birthday"></p>
+            <p id="user4-location"></p>
+            <p id="user4-status"></p>
+        </div>
+    </div>
+    
+    <!-- Embedded Profile app web app -->
+    <iframe src="https://x.thunkable.com/projectPage/65d3aabaeef57cc950afb632" width="100%" height="500px"></iframe>
+    
+    <!-- JavaScript code to interact with Firebase Web API -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAsREb926wq-4j7tCqIDxdHOJk0T263XQY",
+            authDomain: "profileapp-856d9.firebaseapp.com",
+            databaseURL: "https://profileapp-856d9-default-rtdb.firebaseio.com/",
+            projectId: "profileapp-856d9",
+            storageBucket: "gs://profileapp-856d9.appspot.com",
+            messagingSenderId: "807292416112",
+            appId: "1:807292416112:web:e203c17789eb50322f04b"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        // Hardcoded IDs for the first two users in the RTDB
+        const userId1 = "CEFrunfRsOcugIpCl6yh8VIUOrp2";
+        const userId2 = "UxqGIGHStleWIG3YB2cASnFCbb73";
+
+        // Function to fetch user profiles from Firebase RTDB
+        function fetchUserProfiles() {
+            // Fetch user profile for User 1
+            firebase.database().ref(`users/${userId1}`)
+                .once('value')
+                .then(snapshot => {
+                    const data = snapshot.val();
+                    // Update the profile information for User 1
+                    const user1Profile = document.querySelector("#user1-profile");
+                    user1Profile.innerHTML = `
+                        <h2>${data.name}</h2>
+                        <p>${data.image}</p>
+                        <p>Birthday: ${data.birthday}</p>
+                        <p>Location: ${data.location}</p>
+                        <p>Status: ${data.status}</p>
+                    `;
+                });
+
+            // Fetch user profile for User 2
+            firebase.database().ref(`users/${userId2}`)
+                .once('value')
+                .then(snapshot => {
+                    const data = snapshot.val();
+                    // Update the profile information for User 2
+                    const user2Profile = document.querySelector("#user2-profile");
+                    user2Profile.innerHTML = `
+                        <h2>${data.name}</h2>
+                        <p>${data.image}</p>
+                        <p>Birthday: ${data.birthday}</p>
+                        <p>Location: ${data.location}</p>
+                        <p>Status: ${data.status}</p>
+                    `;
+                });
+        }
+
+        // Call the function to fetch user profiles
+        fetchUserProfiles();
+    </script>
+</body>
+</html>
